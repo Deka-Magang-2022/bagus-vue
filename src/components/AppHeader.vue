@@ -30,46 +30,33 @@
 
 <template>
 	<header>
-		<nav
-			class="
-				w-full
-				bg-white
-				text-gray-800
-				dark:bg-gray-800 dark:text-white
-				py-4
-				px-8
-				shadow-md
-				dark:shadow-md
-				flex
-				items-center
-				border-b border-gray-400/50
-			"
-		>
+		<nav class="w-full bg-white text-gray-800 dark:bg-gray-800 dark:text-white py-4 px-8 shadow-md dark:shadow-md flex items-center border-b border-gray-400/50">
 			<router-link :to="{ name: 'home' }">
-				<div class="font-bold lg:text-xl md:text-lg text-md">Vitailse</div>
+				<div class="font-bold lg:text-xl md:text-lg text-md pr-1">Home</div>
 			</router-link>
+			<div class="">
+				<a href="todo-list" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Halaman Todo List</a>
+				<a href="kalkulator" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Kalkulator</a>
+				<a href="jurnal" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Jurnal</a>
+				<a href="formlogin" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Halaman Login</a>
+			</div>
 			<div class="ml-auto flex items-center h-full">
 				<select
 					id="language"
 					v-model="$i18n.locale"
-					class="py-1 focus:outline-none rounded dark:text-gray-800"
-				>
+					class="py-1 focus:outline-none rounded dark:text-gray-800">
 					<option
 						v-for="locale in availableLocales"
 						:key="locale"
-						:value="locale"
-					>
+						:value="locale">
 						{{ locale }}
 					</option>
 				</select>
-				<button
-					class="mx-5 cursor-pointer focus:outline-none"
-					@click="toggleDarkMode"
-				>
+				<button class="mx-5 cursor-pointer focus:outline-none" @click="toggleDarkMode">
 					<icon:bx:bx-moon class="w-6 h-6" v-if="!isDark" />
 					<icon:bx:bxs-moon class="w-6 h-6" v-else />
 				</button>
-				<a href="https://github.com/zynth17/vitailse">
+				<a href="https://github.com/knispel987">
 					<icon-akar-icons:github-fill />
 				</a>
 			</div>
