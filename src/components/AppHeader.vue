@@ -39,6 +39,7 @@
 				<a href="kalkulator" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Kalkulator</a>
 				<a href="jurnal" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Jurnal</a>
 				<a href="formlogin" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Halaman Login</a>
+				<a href="halaman" class="border-l-4 border-l-red-600 px-1 font-bold lg:text-xl md:text-lg text-md">Halaman</a>	
 			</div>
 			<div class="ml-auto flex items-center h-full">
 				<select
