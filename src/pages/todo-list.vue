@@ -1,61 +1,42 @@
 <script setup lang="ts">
-	import { useStore } from '@/store';
-    const store = useStore();
-    let variableInput = '';
-		useHead({
-			title: 'Todo List',
-		});
+import { useStore } from '@/store';
+const store = useStore();
+let variabelInput = '';
+	useHead({
+		title: 'todo list',
+	});
 	store.listTodo = [];
-	const simpanData = (value) =>{
-		store.listTodo.push(value)
+	const simpanData = (value: any) =>{
+		store.listTodo.push(value,)
 	}
-	const hapusData = (value) => {
-		store.listTodo.splice( value, 1)
+	const hapusData = (value: any) => {
+	store.listTodo.splice( value, 1)
 	}
-
-	
 </script>
 
 <template>
-	<div class="grid min-h-[80vh]">
-		
-		<div>
-            <h1>Halaman Todo List</h1>
-            <div class="flex">
-                <input v-model="variableInput" class="shadow-xl dark:shadow-blue-900 bg-white border-double border-4  border-sky-500  w-full rounded-md dark:bg-black"  type="text">
-                <button @click="simpanData(variableInput)" type="button" class="shadow-xl dark:shadow-blue-900 px-4 py-2 border-double border-4 border-sky-500 bg-blue-800 rounded-md ml-3 text-white">Add</button>
-            </div>
-
-			<div class="grid grid-cols-1 gap-5 my-10">
-				<div class="shadow-xl dark:shadow-blue-900 border-double border-4 border-red-900 dark:border-sky-500 bg-white dark:bg-black px-4 py-2 rounded-md flex justify-between items-center" v-for="(item, index) in store.listTodo" :key="index">
+	<div>
+		<div class="min-h[70vh]">
+			<h1 class="text-xl">Halaman Todo List</h1>
+			<div class="flex">
+				<input v-model="variabelInput" class="w-full rounded-lg mr-2 dark:text-white dark:bg-gray-800"
+					type="text">
+				<button @click="simpanData(variabelInput)" type="button"
+					class="px-4 py-2 bg-indigo-300 rounded-lg active:bg-indigo-600">Add</button>
+			</div>
+			<div class="grid grid-cols-2 mt-9 gap-3">
+				<div class="flex justify-between py-4 px-1 rounded border-b-2" v-for="(item, index) in store.listTodo" :key="index">
 					{{ item }}
-					<button class="border-double border-4 border-red-900  bg-red-500 px-4 py-2 rounded-md text-white" @click="hapusData(index)" type="button">Hapus</button>
+					<button class="bg-red-500 px-3 py-1 rounded" @click="hapusData(index)" type="button">
+						Hapus
+					</button>
 				</div>
 			</div>
-
-            
-        </div>
-        
-        
-			
-		
-
-		
-        
-        
-        <router-link
-			:to="{ name: 'home' }"
-			class="
-				mt-5
-				hover:text-blue-800
-				dark:hover:text-gray-500
-				hover:underline
-			"
-			>{{ $t('pages.home') }}</router-link
-		>
-		
+		</div>
 	</div>
 </template>
+
+<style scoped></style>
 
 <route lang="yaml">
 name: todo-list

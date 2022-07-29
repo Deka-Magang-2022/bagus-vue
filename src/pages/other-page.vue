@@ -1,26 +1,12 @@
 <script setup lang="ts">
-import Jurnal from "@/assets/Jurnal.md";
 	useHead({
-		title: 'Jurnal Harian',
+		title: 'Other Pages',
 	});
-
-
-	
-
-
 </script>
 
 <template>
 	<div>
-
-	<div class="prose border border-black rounded-md p-10">
-		<Jurnal />
-	</div>
-	
-
-
-	
-
+		<p>{{ $t('pages.other.desc') }}</p>
 		<router-link
 			:to="{ name: 'home' }"
 			class="
@@ -37,5 +23,5 @@ import Jurnal from "@/assets/Jurnal.md";
 <style scoped></style>
 
 <route lang="yaml">
-name: jurnal-harian
+name: other-page
 </route>
