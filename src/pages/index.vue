@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Userimg from "@/assets/diobetes.jpg";
 useHead({
   title: "poenya bagus",
 });
